@@ -13,7 +13,7 @@ class Player(GameObject):
         self.input_manager = input_manager
         self.shoot_lock = False
         self.counter = FrameCounter(30)
-
+        self.hp = 10
 
     def update(self):
         GameObject.update(self)
@@ -36,12 +36,12 @@ class Player(GameObject):
             else:
                 dx -= 3
         if self.input_manager.down_pressed:
-            if self.y + 3 > 720:
+            if self.y + 3 > 600:
                 dy = 0
             else:
                 dy += 3
         if self.input_manager.up_pressed:
-            if self.y - 3 < 80:
+            if self.y - 3 < 40:
                 dy = 0
             else:
                 dy -= 3
