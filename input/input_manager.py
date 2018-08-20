@@ -1,5 +1,5 @@
 import pygame
-
+import time
 
 class InputManager:
     def __init__(self):
@@ -7,7 +7,7 @@ class InputManager:
         self.left_pressed = False
         self.down_pressed = False
         self.up_pressed = False
-        self.x_pressed = False
+        self.x_pressed = True
 
     def __str__(self):
         return '''right: {0} left: {1} down: {2} up: {3} x: {4}'''.format(
@@ -40,3 +40,27 @@ class InputManager:
                 self.up_pressed = False
             elif event.key == pygame.K_x:
                 self.x_pressed = False
+    def update2(self, flagMove):
+
+            if flagMove == 1:
+                self.right_pressed = True
+                time.sleep(0.01)
+            if flagMove == 2:
+                self.left_pressed = True
+                time.sleep(0.01)
+            if flagMove == 0:
+                self.right_pressed = False
+                self.left_pressed = False
+            if flagMove == 4:
+                self.up_pressed = True
+                time.sleep(0.01)
+            if flagMove == 5:
+                self.down_pressed = True
+                time.sleep(0.01)
+            if flagMove == 6:
+                self.up_pressed = False
+                self.down_pressed = False
+
+
+                #self.down_pressed = False
+                #self.up_pressed = False

@@ -1,21 +1,17 @@
 game_objects = []
 
-
 def add(game_object):
     game_objects.append(game_object)
-
 
 def update():
     for game_object in game_objects:
         if game_object.is_active:
             game_object.update()
 
-
 def render(canvas):
     for game_object in game_objects:
         if game_object.is_active:
             game_object.render(canvas)
-
 
 def recycle(t, x, y):
     for game_object in game_objects:
@@ -28,12 +24,13 @@ def recycle(t, x, y):
     new_game_object = t(x, y)
     add(new_game_object)
     return new_game_object
+
 def collide_with(box_collider):
     collie_list = []
-    for game_objects in game_objects :
-        if game_objects.is_active and game_objects.box_collider is not None:
-            if game_objects.box_collider.overlap(box_collider):
-                collie_list.append(game_objects)
+    for game_object in game_objects:
+        if game_object.is_active and game_object.box_collider is not None:
+            if game_object.box_collider.overlap(box_collider):
+                collie_list.append(game_object)
     return collie_list
 
 
@@ -57,7 +54,8 @@ class GameObject:
             render_pos = (self.x - width / 2, self.y - height / 2)
             canvas.blit(self.image, render_pos)
         if self.box_collider is not None:
-            self.box_collider.render(canvas)
+            # self.box_collider.render(canvas)
+            pass
 
 
     def deactivate(self):

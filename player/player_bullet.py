@@ -19,7 +19,7 @@ class PlayerBullet(GameObject):
         self.deactivate_if_needed()
 
     def move(self):
-        self.y -= 5
+        self.y -= 10
 
     def deactivate_if_needed(self):
         if self.y <= 0:

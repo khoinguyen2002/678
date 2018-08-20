@@ -10,3 +10,5 @@ class Enemy(GameObject):
     def update(self):
         GameObject.update(self)
         self.y += 3
+        if self.y > 630:
+            self.is_active = False

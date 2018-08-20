@@ -13,38 +13,39 @@ class Player(GameObject):
         self.input_manager = input_manager
         self.shoot_lock = False
         self.counter = FrameCounter(30)
-
+        self.hp = 10
 
     def update(self):
         GameObject.update(self)
 
-        self.move()
-        self.shoot()
+        for i in range(3):
+            self.move()
+            self.shoot()
 
     def move(self):
         dx = 0
         dy = 0
-
+        delta = 10
         if self.input_manager.right_pressed:
-            if self.x + 3 > 775:
+            if self.x + delta > 775:
                 dx = 0
             else:
-                dx += 3
+                dx += delta
         if self.input_manager.left_pressed:
-            if self.x - 3 < 27:
+            if self.x - delta < 27:
                 dx = 0
             else:
-                dx -= 3
+                dx -= delta
         if self.input_manager.down_pressed:
-            if self.y + 3 > 720:
+            if self.y + delta > 600:
                 dy = 0
             else:
-                dy += 3
+                dy += delta
         if self.input_manager.up_pressed:
-            if self.y - 3 < 80:
+            if self.y - delta < 40:
                 dy = 0
             else:
-                dy -= 3
+                dy -= delta
 
         self.x += dx
         self.y += dy
