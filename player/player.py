@@ -18,34 +18,33 @@ class Player(GameObject):
     def update(self):
         GameObject.update(self)
 
-        for i in range(3):
-            self.move()
-            self.shoot()
+        self.move()
+        self.shoot()
 
     def move(self):
         dx = 0
         dy = 0
-        delta = 10
+
         if self.input_manager.right_pressed:
-            if self.x + delta > 775:
+            if self.x + 3 > 775:
                 dx = 0
             else:
-                dx += delta
+                dx += 3
         if self.input_manager.left_pressed:
-            if self.x - delta < 27:
+            if self.x - 3 < 27:
                 dx = 0
             else:
-                dx -= delta
+                dx -= 3
         if self.input_manager.down_pressed:
-            if self.y + delta > 600:
+            if self.y + 3 > 600:
                 dy = 0
             else:
-                dy += delta
+                dy += 3
         if self.input_manager.up_pressed:
-            if self.y - delta < 40:
+            if self.y - 3 < 40:
                 dy = 0
             else:
-                dy -= delta
+                dy -= 3
 
         self.x += dx
         self.y += dy
