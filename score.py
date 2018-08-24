@@ -1,7 +1,4 @@
 import pygame
-width = 800
-height = 640
-display_surf = pygame.display.set_mode((width, height))
 color = {
     'white': (255, 255, 255),
     'bright_white': (255, 255, 200),
@@ -17,15 +14,14 @@ color = {
 }
 
 class ScoreBoard:
-    def __init__(self, x, y, score, size):
+    def __init__(self, x, y, score):
         self.x = x
         self.y = y
         self.score = score
-        self.size = size
-        self.font = pygame.font.Font(None, self.size)
         self.high_score = 0
-    def display(self):
-        display_high_score = self.font.render(" Best score " + str(self.high_score), True, color['white'])
-        display_score = self.font.render(' Score ' + str(self.score), True, color['white'])
-        display_surf.blit(display_score, (self.x, self.y))
-        display_surf.blit(display_high_score, (self.x, self.y + 20))
+    def display(self, canvas):
+        font = pygame.font.SysFont('Comic Sans MS', 30)
+        display_high_score = font.render(" Best score " + str(self.high_score), True, (255,255,255))
+        display_score = font.render(' Score ' + str(self.score), True, (255,255,255))
+        canvas.blit(display_score, (self.x, self.y))
+        canvas.blit(display_high_score, (self.x, self.y + 20))
