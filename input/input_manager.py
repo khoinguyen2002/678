@@ -54,12 +54,12 @@ class InputManager:
             if flagMove == 4:
                 self.up_pressed = True
                 time.sleep(0.01)
-            if flagMove == 5:
-                self.down_pressed = True
-                time.sleep(0.01)
-            if flagMove == 6:
-                self.up_pressed = False
-                self.down_pressed = False
+            # if flagMove == 5:
+            #     self.down_pressed = True
+            #     time.sleep(0.01)
+            # if flagMove == 6:
+            #     self.up_pressed = False
+            #     self.down_pressed = False
 
 
                 #self.down_pressed = False
