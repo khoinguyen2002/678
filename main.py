@@ -59,6 +59,7 @@ while loop:
         text_height = text.get_height()
         canvas.blit(text, (400 - text_width/2, 320 - text_height/2 ))
     else:
+        BG = pygame.image.load("image/background.123.jpg")
         canvas.fill(BG)
         game_object.render(canvas)
         img = pygame.transform.scale(img, (30, 30))

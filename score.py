@@ -2,6 +2,20 @@ import pygame
 width = 800
 height = 640
 display_surf = pygame.display.set_mode((width, height))
+color = {
+    'white': (255, 255, 255),
+    'bright_white': (255, 255, 200),
+    'blue': (0, 0, 255),
+    'bright_blue': (117, 156, 255),
+    'green': (0, 200, 0),
+    'black': (0, 0, 0),
+    'bright_green': (0, 255, 0),
+    'red': (200,0,0),
+    'bright_red': (255,0,0),
+    'yellow': (200,200,0),
+    'bright_yellow': (255,255,0),
+}
+
 class ScoreBoard:
     def __init__(self, x, y, score, size):
         self.x = x
